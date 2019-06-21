@@ -37,13 +37,14 @@ plt.clabel(cp, cp.levels[:6])
 plt.colorbar()
 m = slope_hist0[-1]
 n = offset_hist0[-1]
-plt.plot(slope_hist0, offset_hist0, '.-', lw=1)
-plt.plot(slope_hist1, offset_hist1, '.-', lw=1)
+plt.plot(slope_hist0, offset_hist0, '.-', lw=1, label='rank0')
+plt.plot(slope_hist1, offset_hist1, 'x-', lw=1, label='rank1')
 plt.plot([ref_slope], [ref_offset], 'rx', ms=10)
 plt.xlim([_m.min(), _m.max()])
 plt.ylim([_n.min(), _n.max()])
 plt.xlabel('Slope')
 plt.ylabel('Offset')
+plt.legend()
 plt.show()
 
 # matplotlib.rcParams['figure.figsize'] = (6.0, 4.0)
